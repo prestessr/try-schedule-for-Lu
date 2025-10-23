@@ -1,0 +1,34 @@
+name: Run The Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: 
+  schedule:
+    - cron: '0 */8 * * *'
+
+env:
+  EMAIL: ${{ secrets.EMAIL_L }}
+  SENHA: ${{ secrets.SENHA_L }}
+  ARDOC: ${{ secrets.ARDOC_L }}
+
+jobs:
+  automation:
+    runs-on: ubuntu-latest
+    container: ghcr.io/prestessr/robot-image-prestes:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Automation
+        run: xvfb-run --server-args="-screen 0 1366x768x24" robot --removekeywords NAME:\*Get\ Env\* --removekeywords NAME:\*Input\ Text\* -d results tests
+
+      - name: Upload Robot results
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-log
+          path: /__w/try-schedule/try-schedule/results/log.html
+          retention-days: 3
+      
