@@ -26,9 +26,9 @@ jobs:
         run: xvfb-run --server-args="-screen 0 1366x768x24" robot --removekeywords NAME:\*Get\ Env\* --removekeywords NAME:\*Input\ Text\* -d results tests
 
       - name: Upload Robot results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: robot-log
           path: /__w/try-schedule-for-Lu/try-schedule-for-Lu/results/log.html
           retention-days: 3
-      
