@@ -29,6 +29,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: robot-log
-          path: /__w/try-schedule/try-schedule/results/log.html
+          path: /__w/try-schedule-for-Lu/try-schedule-for-Lu/results/log.html
           retention-days: 3
       
