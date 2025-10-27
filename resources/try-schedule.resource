@@ -3,7 +3,7 @@
 Resource    ../config/package.resource
 
 *** Variables ***
-${ERROR_RENOV}    A sua situação de dívida com a Segurança Social e a Autoridade Tributária está em revisão. Uma vez validada, poderá fazer os pedidos. Por favor volte mais tarde.
+${ERROR_RENOV}    Pedido Aguarda Pagamento
 ${AR}
 ${PWD}
 ${EMAIL}
@@ -24,9 +24,9 @@ Executar Tentativa De Agendamento Online
     Wait Until Element Is Visible    //*[@id="R28271233697281696_heading"]
 
 
-    Element Should Contain    //*[@id="R55609004536556234"]/div/div[2]/div[2]/div/strong/ul/li
+    Element Should Contain    //*[@id="R104955188522110109_Cards"]/div/div[3]/ul/li/div/div[1]/div[2]/span[2]
     ...        ${ERROR_RENOV}    
-    ...    PROVAVELMENTE DÁ PRA RENOVAR! CORRE!
+    ...    PROVAVELMENTE É POSSÍVEL AVANÇAR NA RENOVAÇÃO
 
 
 Carregar Variaveis
