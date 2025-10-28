@@ -6,5 +6,9 @@ Suite Setup    Carregar Variaveis
 Test Teardown    Close Browser
 
 *** Test Cases ***
-Verificar Se A Renovação Automática Ainda Encontra-se Indisponível
-    Executar Tentativa De Agendamento Online
+Verificar Se A Renovação Automática Avançou de Status
+    [Documentation]    O teste falha se o status for diferente de "Pedido Aguarda Avaliação"
+
+    Entrar No Portal
+    Fazer Login
+    Validar Se Houve Alteração No Status
