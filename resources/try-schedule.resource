@@ -3,7 +3,7 @@
 Resource    ../config/package.resource
 
 *** Variables ***
-${EXPECTED}    Pedido Aguarda Avaliação
+${EXPECTED}    Pedido em Avaliação
 ${AR}
 ${PWD}
 ${EMAIL}
