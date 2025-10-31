@@ -10,22 +10,22 @@ ${EMAIL}
 
 *** Keywords ***
 Validar Se Houve Alteração No Status
-    Element Should Contain    //*[@id="R104955188522110109_Cards"]/div/div[3]/ul/li/div/div[1]/div[2]/span[2]
+    Element Should Contain    //*[@id="R113297349254706744_Cards"]//span[text()='Pedido em Avaliação']
     ...        ${EXPECTED}    
     ...    PROVAVELMENTE HOUVE ALTERAÇÃO DO STATUS POR PARTE DA AIMA, VÁ CONFERIR
 
 Entrar No Portal
     Open Browser    https://portal-renovacoes.aima.gov.pt/ords/r/aima/aima-pr/pr-home   Chrome
-    Wait Until Element Is Visible    //*[@id="B12371037102505817"]
+    Wait Until Element Is Visible    //*[@id="B20713197835102452"]
 
 Fazer Login
-    Click Element    //*[@id="B12371037102505817"]
-    Wait Until Element Is Visible    //*[@id="B82650789021568463"]
+    Click Element    //*[@id="B20713197835102452"]
+    Wait Until Element Is Visible    //*[@id="B90992949754165098"]
     Input Text    //*[@id="P9999_USERNAME"]   ${EMAIL}
     Input Password    //*[@id="P9999_TITULO_RESIDENCIA"]    ${AR}
     Input Password    //*[@id="P9999_PASSWORD"]    ${PWD}
-    Click Element    //*[@id="B82650789021568463"]
-    Wait Until Element Is Visible    //*[@id="R28271233697281696_heading"]
+    Click Element    //*[@id="B90992949754165098"]
+    Wait Until Element Is Visible    //*[@id="R38628198868352783_heading"]
 
 Carregar Variaveis
 
